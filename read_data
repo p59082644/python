@@ -1,0 +1,10 @@
+总有那么多奇怪的数据要读取，这里记下
+
+# 读多个json，并转换成dataframe,并合并结果
+import glob
+l = [pd.read_json(filename, lines=True) for filename in glob.glob('./data/*')]
+df = pd.concat(l, axis=0)
+
+#合并成元组
+pd.DataFrame(data).transform(tuple, axis=1).tolist()
+
